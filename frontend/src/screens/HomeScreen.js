@@ -4,6 +4,8 @@ import data from '../data'
 const HomeScreen = () => {
   return (
     <div>
+        <h3>HomeScreen.js</h3>
+
         <h1> Featured Products</h1>
 
         <div className="products">

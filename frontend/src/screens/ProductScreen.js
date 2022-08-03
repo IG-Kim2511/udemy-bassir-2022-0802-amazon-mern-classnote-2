@@ -1,8 +1,16 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const ProductScreen = () => {
+
+    const { slug } = useParams();
+
+
   return (
-    <div>ProductScreen</div>
+    <div>
+        <h3>ProductScreen.js</h3>
+        <h1>{slug}</h1>
+    </div>
   )
 }
 

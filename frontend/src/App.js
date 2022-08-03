@@ -1,6 +1,6 @@
 
 import './App.css';
-import data from './data';
+// import data from './data';
 
 import {
   BrowserRouter,
@@ -61,35 +61,37 @@ function App() {
         <header>
           <a href="/">kim's amazon</a>
         </header>
-        <main>
-
-        {/* 🍀c8 router-dom
-          <Routes>
-            <Route path="/" element={<App />}>
-
-                  <Route index element={<Home />} />
-
-                  <Route path="teams" element={<Teams />}>
-                        <Route path=":teamId" element={<Team />} />
-                        <Route path="new" element={<NewTeamForm />} />
-                        <Route index element={<LeagueStandings />} />
-                  </Route>
-
-            </Route>
-          </Routes>
-        */}
-
-        <Routes>
-          <Route path="/" element={<HomeScreen />}></Route>
-
-          {/*🍀c8. a href={` 주소`} 그대로 사용함.
-            클릭하면 route path='~~'에 slug 들어가고, 
-            <ProductScreen/>으로 이동함 */}
-          <Route path="/product/:slug" element={<ProductScreen />}></Route>
-        </Routes>
-
-          
         
+        <main>
+          <h3>App.js</h3>
+
+          {/* 🍀c8 router-dom
+            <Routes>
+              <Route path="/" element={<App />}>
+
+                    <Route index element={<Home />} />
+
+                    <Route path="teams" element={<Teams />}>
+                          <Route path=":teamId" element={<Team />} />
+                          <Route path="new" element={<NewTeamForm />} />
+                          <Route index element={<LeagueStandings />} />
+                    </Route>
+
+              </Route>
+            </Routes>
+          */}
+
+          <Routes>
+            <Route path="/" element={<HomeScreen />}></Route>
+
+            {/*🍀c8. a href={` 주소`} 그대로 사용함.
+              클릭하면 route path='~~'에 slug 들어가고, 
+              <ProductScreen/>으로 이동함 */}
+            <Route path="/product/:slug" element={<ProductScreen />}></Route>
+          </Routes>
+
+            
+          
 
         
         </main>    
