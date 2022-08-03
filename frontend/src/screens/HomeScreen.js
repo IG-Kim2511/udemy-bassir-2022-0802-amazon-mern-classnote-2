@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import data from '../data'
 
 const HomeScreen = () => {
@@ -19,14 +20,16 @@ const HomeScreen = () => {
 
                     {/*  🍀c7.  href={ `~~~`}
                         slug사용해서 address 세팅 */}
-                <a href={`/product/${p_product.slug}`}>.
+                        
+                    {/* 🍀c8  Link to="~~" */}
+                <Link to={`/product/${p_product.slug}`}>.
                     <img src={p_product.image} alt={p_product.name}/>
-                </a>
+                </Link>
 
                 <div className="product-info">
-                    <a href={`/product/${p_product.slug}`}>
+                    <Link to={`/product/${p_product.slug}`}>
                     <p>{p_product.name}</p>
-                    </a>
+                    </Link>
                     <p><strong>${p_product.price}</strong></p>    
                 </div>        
                 </div>

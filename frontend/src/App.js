@@ -6,6 +6,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Link,
 } from "react-router-dom";
 
 import HomeScreen from './screens/HomeScreen';
@@ -28,30 +29,23 @@ import ProductScreen from './screens/ProductScreen';
 
   🦄🦄c8. Add Routing, router-dom, URL parameter, useParams, Link to=
    👉 HomeScreens.js
+   👉 ProductScreen.js
 
 
    🍀
     router-dom
     URL parameter
     useParams
-    Link to=
+    Link to="~~"
 
     🍀 <Route path="/product/:slug"
 
+    🍀Link to="~~" 
+      a href="~~~ 👉 Link to="~~"  : 페이지 바뀌는 loading없이 한 페이지안에서 다이나믹하게 이동함
 
-    1 click home screen
-
-    2. loading spin mark 확인됨
-
-
-    react는 1개의 페이지에서 작동하는것.
-
-    page refresh하면 안되는것임
-
-    Link 태그를 활용하자
-
-
-    Link is a component from React router dom
+      react는 1개의 페이지에서 작동하는것.
+      page refresh하면 안되는것임
+      Link to= 태그를 활용하자
 */
 
 function App() {
@@ -59,9 +53,11 @@ function App() {
     <BrowserRouter>
       <div>
         <header>
-          <a href="/">kim's amazon</a>
+
+        {/* 🍀c8  Link to="~~" */}
+          <Link to="/">kim's amazon</Link>
         </header>
-        
+
         <main>
           <h3>App.js</h3>
 
