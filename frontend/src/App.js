@@ -46,6 +46,36 @@ import ProductScreen from './screens/ProductScreen';
       react는 1개의 페이지에서 작동하는것.
       page refresh하면 안되는것임
       Link to= 태그를 활용하자
+
+
+    🦄🦄c9. Node.JS Server, Create backend API - type: module, express, nodemon, -D flag, dev_Dependencies, scripts
+
+      backend폴더 이동 후
+      npm init
+
+      추가 type : module 
+      앞으로 require를 사용안하고, ES6문법 import를 사용할것이므로...
+
+      create server.js
+      npm i express
+
+      backend폴더안 ( server.js와 같은 폴더)에 복사-붙여넣기
+      backend에 복붙한 data.js선택
+
+      node server.js
+
+      JSON Viewer설치
+      JSON 정리해주는 extension
+
+
+      npm install nodemon -D
+      -D : 개발자전용으로 설치
+      dev_Dependencies 항목에 설치된것 확인됨
+
+      'scripts'안에 추가하는 코드~~~는 
+      npm ~~~ 방식으로 
+      명령어를 만드는것 같음
+      원래 nodemon 실행 명령어는 nodemon server.js
 */
 
 function App() {
