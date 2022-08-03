@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 /* 
   🦄🦄c6. 리액트폴더안의 Git 삭제하기, 상위폴더에 Git설치하기
@@ -20,16 +21,23 @@ import HomeScreen from './screens/HomeScreen';
   🦄🦄c7. List Products. data binding. map(~)
   👉 data.js
   👉 index.css
+  👉 HomeScreens.js
 
   frontend폴더안으로 들어간 후, npm start   
 
 
   🦄🦄c8. Add Routing, router-dom, URL parameter, useParams, Link to=
+   👉 HomeScreens.js
 
+
+   🍀
     router-dom
     URL parameter
     useParams
     Link to=
+
+    🍀 <Route path="/product/:slug"
+
 
     1 click home screen
 
@@ -58,47 +66,32 @@ function App() {
         {/* 🍀c8 router-dom
           <Routes>
             <Route path="/" element={<App />}>
-              <Route index element={<Home />} />
-              <Route path="teams" element={<Teams />}>
-                <Route path=":teamId" element={<Team />} />
-                <Route path="new" element={<NewTeamForm />} />
-                <Route index element={<LeagueStandings />} />
-              </Route>
+
+                  <Route index element={<Home />} />
+
+                  <Route path="teams" element={<Teams />}>
+                        <Route path=":teamId" element={<Team />} />
+                        <Route path="new" element={<NewTeamForm />} />
+                        <Route index element={<LeagueStandings />} />
+                  </Route>
+
             </Route>
           </Routes>
         */}
 
         <Routes>
           <Route path="/" element={<HomeScreen />}></Route>
+
+          {/*🍀c8. a href={` 주소`} 그대로 사용함.
+            클릭하면 route path='~~'에 slug 들어가고, 
+            <ProductScreen/>으로 이동함 */}
+          <Route path="/product/:slug" element={<ProductScreen />}></Route>
         </Routes>
 
-          <h1> Featured Products</h1>
-
-          <div className="products">
           
-            {/* 🍀c7. ~.map(~) */}
-            {
-              data.data_products.map((p_product)=>(
+        
 
-                  // 🍀c7.  key={} : map()안의 첫번째 태그에 추가
-                <div className="product" key={p_product.slug}>
-
-                      {/*  🍀c7.  href={ `~~~`}
-                        slug사용해서 address 세팅 */}
-                  <a href={`/product/${p_product.slug}`}>.
-                    <img src={p_product.image} alt={p_product.name}/>
-                  </a>
-
-                  <div className="product-info">
-                    <a href={`/product/${p_product.slug}`}>
-                      <p>{p_product.name}</p>
-                    </a>
-                      <p><strong>${p_product.price}</strong></p>    
-                  </div>        
-                </div>
-              ))
-            }
-          </div>      
+        
         </main>    
       </div>
     </BrowserRouter>
