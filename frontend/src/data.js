@@ -1,8 +1,11 @@
+
+// 🍀c7
+
 const data = {
   data_products: [
     {
       name: 'Nike Slim shirt',
-      slug: 'nike-slim-shirt',
+      slug: 'nike-slim-shirt',    //slug
       category: 'Shirts',
       image: '/images/p1.jpg', // 679px × 829px
       price: 120,

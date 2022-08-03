@@ -10,12 +10,17 @@ import data from './data';
 
 
   🦄🦄c7. List Products. data binding. map(~)
-  👉data.js
+  👉 data.js
+  👉 index.css
 
   frontend폴더안으로 들어간 후, 
 
   npm start
 
+  ~.map((p_product)=
+
+  key={} : map()안의 첫번째 태그에 추가
+  
 */
 function App() {
   return (
@@ -25,17 +30,14 @@ function App() {
       </header>
       <main>
       <h1> Featured Products</h1>
-      {/* 🍀c7 */}
+      {/* 🍀c7. ~.map(~) */}
       {
         data.data_products.map((p_product)=>(
-          <div>
+          <div key={p_product.slug}>
             <img src={p_product.image} alt={p_product.name}/>
             <p>{p_product.name}</p>
-            <p>{p_product.price}</p>
-            
+            <p>{p_product.price}</p>            
           </div>
-
-
         ))
       }
       
