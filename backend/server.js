@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
 
 
 // 🍀c9 backend폴더의 data.js
+// http://localhost:5000/api/products 으로 접속하면, data JSON볼수있음
 app.get('/api/products', (req, res) => {
   res.send(data.data_products)
 })
