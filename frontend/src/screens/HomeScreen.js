@@ -4,7 +4,7 @@ import axios from 'axios';
 // import data from '../data';
 
 function HomeScreen() {
-  const [products, setProducts] = useState([]);
+  const [products_api, setProducts_api] = useState([]);
 
       // 🍀c10. ~~~/api/products주소에 JSON만든것을 axios로 불러옴
     // 👉package.json  : proxy 와 연결
@@ -12,7 +12,7 @@ function HomeScreen() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get('/api/products');
-      setProducts(result.data);
+      setProducts_api(result.data);
     };
     fetchData();
   }, []);
@@ -31,7 +31,7 @@ function HomeScreen() {
             // data.data_products.map((p_product)=>(
 
            // 🍀c10. server.js의 api data 가져옴
-            products.map((product) => (
+            products_api.map((product) => (
 
             // 🍀c7.  key={} : map()안의 첫번째 태그에 추가
           <div className="product" key={product.slug}>
