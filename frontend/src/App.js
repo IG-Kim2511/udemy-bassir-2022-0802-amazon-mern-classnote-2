@@ -76,6 +76,23 @@ import ProductScreen from './screens/ProductScreen';
       npm ~~~ 방식으로 
       명령어를 만드는것 같음
       원래 nodemon 실행 명령어는 nodemon server.js
+
+
+    🦄🦄c10. Fetch Products From Backend
+       👉 frontend/package.json      
+       👉 frontend/../HomeScreen.js
+
+      🍀"proxy": "http://localhost:5000",  
+
+      🍀axios
+
+
+
+
+
+
+
+
 */
 
 function App() {
