@@ -12,6 +12,11 @@ import {
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 
+import { Container, Navbar } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap'
+
+
+
 /* 
   🦄🦄c6. 리액트폴더안의 Git 삭제하기, 상위폴더에 Git설치하기
 
@@ -105,59 +110,93 @@ import ProductScreen from './screens/ProductScreen';
       loading끝나고, error ? 👉 error
 
       loading끝나고, error없으면 ? 👉 product.map(~) 보여줌
-
-
-    🦄🦄c12. react-bootstrap,react-router-bootstrap - Add Bootstrap
-      👉 HomeScreens.js
-      👉 HomeScreens.js
-
-
-
 */
 
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <div>
+//         <header className='site-container'>
+//           {/* 🍀c8  Link to="~~" */}
+//             <Link to="/">kim's amazon</Link>
+//         </header>
+
+
+//         <main>
+//           <h3>App.js</h3>
+
+//           {/* 🍀c8 router-dom
+//             <Routes>
+//               <Route path="/" element={<App />}>
+
+//                     <Route index element={<Home />} />
+
+//                     <Route path="teams" element={<Teams />}>
+//                           <Route path=":teamId" element={<Team />} />
+//                           <Route path="new" element={<NewTeamForm />} />
+//                           <Route index element={<LeagueStandings />} />
+//                     </Route>
+
+//               </Route>
+//             </Routes>
+//           */}
+
+//           <Routes>
+//             <Route path="/" element={<HomeScreen />}></Route>
+
+//             {/*🍀c8. a href={` 주소`} 그대로 사용함.
+//               클릭하면 route path='~~'에 slug 들어가고, 
+//               <ProductScreen/>으로 이동함 */}
+//             <Route path="/product/:slug" element={<ProductScreen />}></Route>
+//           </Routes>
+
+//         </main>    
+
+//         <footer>
+//               Footer
+//         </footer>
+//       </div>
+//     </BrowserRouter>
+//   );
+// }
+
+
+
+/* 
+    🦄🦄c12. react-bootstrap,react-router-bootstrap - Add Bootstrap
+    
+
+    🦄🦄c13. Create Product-and-Rating-Component
+    👉/screens/homeScreen.js
+    👉/components/Product.js
+    👉/components/Rating.js
+*/
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="d-flex flex-column site-container">
         <header>
-
-        {/* 🍀c8  Link to="~~" */}
-          <Link to="/">kim's amazon</Link>
+          <Navbar bg="dark" variant="dark">
+            <Container>
+            {/* LinkContainer */}
+              <LinkContainer to="/">
+                <Navbar.Brand>amazona</Navbar.Brand>
+              </LinkContainer>
+            </Container>
+          </Navbar>
         </header>
-
         <main>
-          <h3>App.js</h3>
-
-          {/* 🍀c8 router-dom
+          {/* Container */}
+          <Container>
             <Routes>
-              <Route path="/" element={<App />}>
-
-                    <Route index element={<Home />} />
-
-                    <Route path="teams" element={<Teams />}>
-                          <Route path=":teamId" element={<Team />} />
-                          <Route path="new" element={<NewTeamForm />} />
-                          <Route index element={<LeagueStandings />} />
-                    </Route>
-
-              </Route>
+              <Route path="/product/:slug" element={<ProductScreen />} />
+              <Route path="/" element={<HomeScreen />} />
             </Routes>
-          */}
-
-          <Routes>
-            <Route path="/" element={<HomeScreen />}></Route>
-
-            {/*🍀c8. a href={` 주소`} 그대로 사용함.
-              클릭하면 route path='~~'에 slug 들어가고, 
-              <ProductScreen/>으로 이동함 */}
-            <Route path="/product/:slug" element={<ProductScreen />}></Route>
-          </Routes>
-
-            
-          
-
-        
-        </main>    
+          </Container>
+        </main>
+        <footer>
+          <div className="text-center">All rights reserved</div>
+        </footer>
       </div>
     </BrowserRouter>
   );

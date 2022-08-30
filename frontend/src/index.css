@@ -24,8 +24,15 @@ header a {
   font-weight: bold;
   text-decoration: none;
 }
+
+.site-container{
+  /* min-height: 100vh; */
+}
+
 main {
   padding: 1rem;
+
+  /* flex: 1 1 50%; */
 }
 .products {
   display: flex;
@@ -43,4 +50,8 @@ main {
 }
 .product-info {
   padding: 1rem;
+}
+
+footer{
+  text-align: center;
 }
