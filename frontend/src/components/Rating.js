@@ -2,6 +2,7 @@ function Rating(props) {
     const { rating, numReviews } = props;
     return (
       <div className="rating">
+      <h3>/components/Rating.js</h3>
         <span>
           <i
             className={
