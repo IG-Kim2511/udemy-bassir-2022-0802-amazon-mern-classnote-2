@@ -6,8 +6,12 @@ import axios from 'axios';
 function HomeScreen() {
   const [products_api, setProducts_api] = useState([]);
 
-      // 🍀c10. ~~~/api/products주소에 JSON만든것을 axios로 불러옴
-    // 👉package.json  : proxy 와 연결
+    /* 
+        🍀c10. ~~~/api/products주소에 JSON만든것을 axios로 불러옴
+        👉package.json  : proxy 와 연결 
+        backend/ server.js도 실행중이어야 함
+        backend에서, frontend에서 모두 npm start    
+    */
 
   useEffect(() => {
     const fetchData = async () => {
