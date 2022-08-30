@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import data from '../data';
 
+// 🍀c11.use-reducer-logger
+import logger from 'use-reducer-logger';
+
+
 
 
 
@@ -41,8 +45,10 @@ function HomeScreen() {
       default값: 
       loading : true, 
       error : ""
+
+     🍀c11.use-reducer-logger
   */
-  const [{loading, error, products}, dispatch] = useReducer(reducer,{
+  const [{loading, error, products}, dispatch] = useReducer(logger(reducer),{
     loading:true,
     error:"",
     products:[],
