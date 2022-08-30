@@ -170,6 +170,7 @@ import { LinkContainer } from 'react-router-bootstrap'
     👉/screens/homeScreen.js
     👉/components/Product.js
     👉/components/Rating.js
+    👉/public/index.html
 */
 function App() {
   return (
