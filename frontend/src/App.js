@@ -86,12 +86,39 @@ import ProductScreen from './screens/ProductScreen';
 
       🍀axios
 
+    
+    🦄🦄c11. useReducer, use reducer logger 라이브러리 - Manage State By Reducer Hooks
+     👉 HomeScreens.js
 
-    🦄🦄c11. useReducer - Manage State By Reducer Hooks
+     
+      🍀useReducer
+
+      loading중  👉 ture
+
+      loading 끝 👉 false
+
+      fetch실패 : error 보여줌
 
 
+      default값
+
+      loading : true, 
+
+      error : ""
 
 
+      🍀
+      🍀
+      backend/ server.js도 실행중이어야 함
+      backend에서, frontend에서 모두 npm start
+
+
+      🍀
+      loading ?   👉 loading
+
+      loading끝나고, error ? 👉 error
+
+      loading끝나고, error없으면 ? 👉 product.map(~) 보여줌
 
 
 */
