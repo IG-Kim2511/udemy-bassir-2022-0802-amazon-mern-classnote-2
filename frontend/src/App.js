@@ -90,22 +90,8 @@ import ProductScreen from './screens/ProductScreen';
     🦄🦄c11. useReducer, use reducer logger 라이브러리 - Manage State By Reducer Hooks
      👉 HomeScreens.js
 
-     
-      🍀useReducer
 
-      loading중  👉 ture
-
-      loading 끝 👉 false
-
-      fetch실패 : error 보여줌
-
-
-      default값
-
-      loading : true, 
-
-      error : ""
-
+  
 
       🍀
       🍀

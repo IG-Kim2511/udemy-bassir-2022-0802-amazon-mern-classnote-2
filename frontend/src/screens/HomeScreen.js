@@ -1,10 +1,51 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import data from '../data';
 
+
+
+
+/* 
+    🍀c11. useReducer
+
+      loading중  👉 ture
+      loading 끝 👉 false
+      fetch실패 : error 보여줌
+*/
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'FETCH_REQUEST':
+      return {...state, loading: true}
+
+    case 'FETCH_SUCCESS':
+      return {...state, loading: false, products:action.payload}
+
+    case 'FETCH_FAIL':
+      return {...state, loading: false, error: action.payload}
+
+    default:
+      return state;
+  }
+}
+
+
+
+
 function HomeScreen() {
+
   const [products_api, setProducts_api] = useState([]);
+
+  /* 🍀c11 
+      default값: 
+      loading : true, 
+      error : ""
+  */
+  const [{loading, error, products}, dispatch] = useReducer(reducer,{
+    loading:true,
+    error:""
+  })
 
     /* 
         🍀c10. ~~~/api/products주소에 JSON만든것을 axios로 불러옴
