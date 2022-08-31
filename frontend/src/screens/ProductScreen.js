@@ -31,12 +31,14 @@ const ProductScreen = () => {
       error: '',
     });
     
-    // const [products, setProducts] = useState([]);
+
     useEffect(() => {
       const fetchData = async () => {
         dispatch({ type: 'FETCH_REQUEST' });
         try {
-          const result = await axios.get('/api/products');
+          
+          // axios.get('/api/products/slug/${slug}');
+          const result = await axios.get(`/api/products/slug/${slug}`);
           dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
         } catch (err) {
           dispatch({ type: 'FETCH_FAIL', payload: err.message });
@@ -45,17 +47,40 @@ const ProductScreen = () => {
         // setProducts(result.data);
       };
       fetchData();
-    }, []);
+    }, [slug]);
   
 
-  return (
-    <div>
-        <h3>ProductScreen.js</h3>
+  // return (
+  //   <div>
+  //       <h3>ProductScreen.js</h3>
 
-        {/* 🍀c8. useParams */}
-        <h1>{slug}</h1>
-    </div>
-  )
+  //       {/* 🍀c8. useParams */}
+  //       <h1>{slug}</h1>  
+  //   </div>
+  // )
+
+
+  /*  🍀c14
+    <기본 template>
+    return 
+    (
+    <div>
+
+    순으로 코딩함
+
+    <🍀return에 condition rendering 넣기>
+      return
+      변수 
+      ? <div>
+      : 변수 
+      ? <div>
+*/
+
+  return loading
+  ? <div>loading..</div>
+  : error
+  ? <div>{error}</div>
+  : <div>{product.name}</div>
 }
 
 export default ProductScreen
