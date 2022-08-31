@@ -136,8 +136,6 @@ const ProductScreen = () => {
               </div>
               </ListGroup.Item>
             }
-
-
            
           </ListGroup>
         </Card.Body>

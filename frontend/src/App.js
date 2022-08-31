@@ -173,16 +173,14 @@ import { LinkContainer } from 'react-router-bootstrap'
     👉/public/index.html
     
     
-    🦄🦄c14. Add Product Screen
+    🦄🦄c14. conditional rendering, npm react-helmet-async, Product Screen
       👉backend/server.js
       👉frontend/src/App.js      
       👉frontend/src/index.js
       👉frontend/src/screens/HomeScreen.js
       👉frontend/src/screens/ProductScreen.js
 
-
       🍀npm react-helmet-async
-
       웹페이지 title을 페이지마다 설정해주는 라이브러리
 */
 
