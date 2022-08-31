@@ -3,7 +3,9 @@ function Rating(props) {
     return (
       <div className="rating">
       <h3>/components/Rating.js</h3>
+      <div><i className="fas fa-star"></i></div>
         <span>
+        {/* fontawesome <i class="fas fa-star"></i> */}
           <i
             className={
               rating >= 1

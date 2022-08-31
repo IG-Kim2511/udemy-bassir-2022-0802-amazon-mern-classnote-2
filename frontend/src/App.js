@@ -166,12 +166,44 @@ import { LinkContainer } from 'react-router-bootstrap'
     🦄🦄c12. react-bootstrap,react-router-bootstrap - Add Bootstrap
     
 
-    🦄🦄c13. Create Product-and-Rating-Component
+    🦄🦄c13. bootstrap - Product, Rating Component
     👉/screens/homeScreen.js
     👉/components/Product.js
     👉/components/Rating.js
     👉/public/index.html
+    
+    
+    🦄🦄c14. Add Product Screen
+      👉backend/server.js
+      👉frontend/src/App.js      
+      👉frontend/src/index.js
+      👉frontend/src/screens/HomeScreen.js
+      👉frontend/src/screens/ProductScreen.js
+
+      🍄
+      ~~/:slug에 접속하면,
+
+      data.products의 slug 키 === :slug 비교 후 맞는것을 , const product
+
+      if (product)
+
+      res.send(product);
+
+
+
+
+      🍀conditional  rendering
+
+      조건이 맞으면 , 그다음의 element return, 
+
+      안맞으면, 무시함
+
+
+      🍀npm react-helmet-async
+
+      웹페이지 title을 페이지마다 설정해주는 라이브러리
 */
+
 function App() {
   return (
     <BrowserRouter>
