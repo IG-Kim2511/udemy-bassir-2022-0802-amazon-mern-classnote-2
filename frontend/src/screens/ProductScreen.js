@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useReducer } from 'react'
+import { Badge, Card, Col, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
+import Rating from '../components/Rating'
 
 // 🍀c14
 const reducer = (state, action) => {
@@ -80,7 +82,53 @@ const ProductScreen = () => {
   ? <div>loading..</div>
   : error
   ? <div>{error}</div>
-  : <div>{product.name}</div>
+  : <div>
+     <h3>ProductScreen.js</h3>
+  
+     <Row>
+      <Col md={6}>
+        <img className='img-large'
+        src={product.image}></img>
+      </Col>
+      <Col md={3}>
+        <ListGroup>
+          <ListGroup.Item><h1>{product.name}</h1></ListGroup.Item>
+          <ListGroup.Item><Rating rating={product.rating} numReviews={product.numReviews} /></ListGroup.Item>
+          <ListGroup.Item>Price : ${product.price}</ListGroup.Item>
+          <ListGroup.Item>Desc : 
+            <p>{product.description}</p>
+          </ListGroup.Item>
+          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+         </ListGroup>
+      </Col>
+      <Col md={3}>
+        <Card.Body>
+          <ListGroup variant='flush'> 
+            <ListGroup.Item>
+              <Row>
+                <Col>Price:</Col>
+                <Col>${product.price}</Col>
+              </Row>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <Row>
+                <Col>Status:</Col>
+                <Col>
+                  {product.countInStock > 0
+                  ? <Badge bg="success">in stock</Badge>
+                  : <Badge bg="danger">unavailable</Badge>}
+                </Col>
+              </Row>
+
+            </ListGroup.Item>
+            <ListGroup.Item></ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+      
+      </Col>
+     </Row>
+  
+    </div>
 }
 
 export default ProductScreen
