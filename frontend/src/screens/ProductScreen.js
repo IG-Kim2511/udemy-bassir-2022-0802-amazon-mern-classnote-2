@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useReducer } from 'react'
-import { Badge, Card, Col, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
+import { Badge, Button, Card, Col, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import Rating from '../components/Rating'
 
@@ -119,9 +119,26 @@ const ProductScreen = () => {
                   : <Badge bg="danger">unavailable</Badge>}
                 </Col>
               </Row>
-
             </ListGroup.Item>
-            <ListGroup.Item></ListGroup.Item>
+
+            {/* 🍀c14. conditional  rendering
+              조건이 맞으면 , 그다음의 element return, 
+              안맞으면, 무시함
+                    
+              🍄inStock >0 일때, button 보여줌
+            */}
+
+            {
+              product.countInStock >0 &&  
+              <ListGroup.Item>
+              <div className="d-grid">
+                <Button variant="primary">add to cart</Button>
+              </div>
+              </ListGroup.Item>
+            }
+
+
+           
           </ListGroup>
         </Card.Body>
       

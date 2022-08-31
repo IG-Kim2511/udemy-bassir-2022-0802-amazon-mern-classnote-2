@@ -180,24 +180,6 @@ import { LinkContainer } from 'react-router-bootstrap'
       👉frontend/src/screens/HomeScreen.js
       👉frontend/src/screens/ProductScreen.js
 
-      🍄
-      ~~/:slug에 접속하면,
-
-      data.products의 slug 키 === :slug 비교 후 맞는것을 , const product
-
-      if (product)
-
-      res.send(product);
-
-
-
-
-      🍀conditional  rendering
-
-      조건이 맞으면 , 그다음의 element return, 
-
-      안맞으면, 무시함
-
 
       🍀npm react-helmet-async
 
