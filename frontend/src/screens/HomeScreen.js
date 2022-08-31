@@ -134,11 +134,13 @@ const reducer = (state, action) => {
 */
 
 function HomeScreen() {
+
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     products: [],
     loading: true,
     error: '',
   });
+  
   // const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -154,6 +156,7 @@ function HomeScreen() {
     };
     fetchData();
   }, []);
+
   return (
     <div>
       <h3>HomeScreen.js</h3>
