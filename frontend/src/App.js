@@ -110,59 +110,9 @@ import { LinkContainer } from 'react-router-bootstrap'
       loading끝나고, error ? 👉 error
 
       loading끝나고, error없으면 ? 👉 product.map(~) 보여줌
-*/
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <div>
-//         <header className='site-container'>
-//           {/* 🍀c8  Link to="~~" */}
-//             <Link to="/">kim's amazon</Link>
-//         </header>
-
-
-//         <main>
-//           <h3>App.js</h3>
-
-//           {/* 🍀c8 router-dom
-//             <Routes>
-//               <Route path="/" element={<App />}>
-
-//                     <Route index element={<Home />} />
-
-//                     <Route path="teams" element={<Teams />}>
-//                           <Route path=":teamId" element={<Team />} />
-//                           <Route path="new" element={<NewTeamForm />} />
-//                           <Route index element={<LeagueStandings />} />
-//                     </Route>
-
-//               </Route>
-//             </Routes>
-//           */}
-
-//           <Routes>
-//             <Route path="/" element={<HomeScreen />}></Route>
-
-//             {/*🍀c8. a href={` 주소`} 그대로 사용함.
-//               클릭하면 route path='~~'에 slug 들어가고, 
-//               <ProductScreen/>으로 이동함 */}
-//             <Route path="/product/:slug" element={<ProductScreen />}></Route>
-//           </Routes>
-
-//         </main>    
-
-//         <footer>
-//               Footer
-//         </footer>
-//       </div>
-//     </BrowserRouter>
-//   );
-// }
 
 
 
-/* 
     🦄🦄c12. react-bootstrap,react-router-bootstrap - Add Bootstrap
     
 
@@ -182,37 +132,106 @@ import { LinkContainer } from 'react-router-bootstrap'
 
       🍀npm react-helmet-async
       웹페이지 title을 페이지마다 설정해주는 라이브러리
+
+
+    🦄🦄c15. utils.js, Loading and Message Component
+      👉frontend/src/screens/HomeScreen.js
+
+      🍄
+      error.response && error.response.data.message 있으면, 
+      return error.response.data.message 
+
+      or
+      return error.message
+
+
 */
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="d-flex flex-column site-container">
-        <header>
-          <Navbar bg="dark" variant="dark">
-            <Container>
-            {/* LinkContainer */}
-              <LinkContainer to="/">
-                <Navbar.Brand>amazona</Navbar.Brand>
-              </LinkContainer>
-            </Container>
-          </Navbar>
+      <div>
+        <header className='site-container'>
+          {/* 🍀c8  Link to="~~" */}
+            <Link to="/">kim's amazon</Link>
         </header>
+
+
         <main>
-          {/* Container */}
-          <Container>
+          <h3>App.js</h3>
+
+          {/* 🍀c8 router-dom
             <Routes>
-              <Route path="/product/:slug" element={<ProductScreen />} />
-              <Route path="/" element={<HomeScreen />} />
+              <Route path="/" element={<App />}>
+
+                    <Route index element={<Home />} />
+
+                    <Route path="teams" element={<Teams />}>
+                          <Route path=":teamId" element={<Team />} />
+                          <Route path="new" element={<NewTeamForm />} />
+                          <Route index element={<LeagueStandings />} />
+                    </Route>
+
+              </Route>
             </Routes>
-          </Container>
-        </main>
+          */}
+
+          <Routes>
+            <Route path="/" element={<HomeScreen />}></Route>
+
+            {/*🍀c8. a href={` 주소`} 그대로 사용함.
+              클릭하면 route path='~~'에 slug 들어가고, 
+              <ProductScreen/>으로 이동함 */}
+            <Route path="/product/:slug" element={<ProductScreen />}></Route>
+          </Routes>
+
+        </main>    
+
         <footer>
-          <div className="text-center">All rights reserved</div>
+              Footer
         </footer>
       </div>
     </BrowserRouter>
   );
 }
+
+
+
+/* 
+    🦄🦄c12. react-bootstrap,react-router-bootstrap - Add Bootstrap
+
+    bootstrpa 에러나서 적용안됨..
+*/
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <div className="d-flex flex-column site-container">
+//         <header>
+//           <Navbar bg="dark" variant="dark">
+//             <Container>
+//             {/* LinkContainer */}
+//               <LinkContainer to="/">
+//                 <Navbar.Brand>amazona</Navbar.Brand>
+//               </LinkContainer>
+//             </Container>
+//           </Navbar>
+//         </header>
+//         <main>
+//           {/* Container */}
+//           <Container>
+//             <Routes>
+//               <Route path="/product/:slug" element={<ProductScreen />} />
+//               <Route path="/" element={<HomeScreen />} />
+//             </Routes>
+//           </Container>
+//         </main>
+//         <footer>
+//           <div className="text-center">All rights reserved</div>
+//         </footer>
+//       </div>
+//     </BrowserRouter>
+//   );
+// }
 
 export default App;

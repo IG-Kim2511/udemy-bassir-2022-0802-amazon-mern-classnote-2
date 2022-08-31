@@ -7,6 +7,7 @@ import axios from 'axios';
 import logger from 'use-reducer-logger';
 import { Col, Row } from 'react-bootstrap';
 import Product from '../components/Product';
+import MessageBox from '../components/MessageBox';
 
 
 /* 
@@ -165,7 +166,8 @@ function HomeScreen() {
         {loading ? (
           <div>Loading...</div>
         ) : error ? (
-          <div>{error}</div>
+          <MessageBox>{error}</MessageBox>
+
         ) : (
           // Row, Col, Product
           <Row>

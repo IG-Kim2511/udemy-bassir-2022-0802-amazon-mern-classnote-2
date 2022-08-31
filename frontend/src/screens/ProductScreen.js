@@ -3,6 +3,7 @@ import React, { useEffect, useReducer } from 'react'
 import { Badge, Button, Card, Col, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import Rating from '../components/Rating'
+import { getError } from '../utils'
 
 // 🍀c14
 const reducer = (state, action) => {
@@ -43,7 +44,10 @@ const ProductScreen = () => {
           const result = await axios.get(`/api/products/slug/${slug}`);
           dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
         } catch (err) {
-          dispatch({ type: 'FETCH_FAIL', payload: err.message });
+          // dispatch({ type: 'FETCH_FAIL', payload: err.message });
+
+          // 🍀c15, 👉 utils.js
+          dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
         }
   
         // setProducts(result.data);
